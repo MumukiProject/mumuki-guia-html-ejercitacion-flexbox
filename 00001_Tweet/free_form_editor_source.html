@@ -8,7 +8,13 @@
 </div>
 
 <script>
-  $("input[pattern]").submit(function(){
+
+  $("input[pattern]").keyup(function(e) {
+    if (e.which == 13)
+      $(this).blur();
+  });
+  
+  $("input[pattern]").blur(function(){
     var elem = $(this);
   	 
     var pattern = new RegExp(elem.attr("pattern"));
