@@ -12,10 +12,8 @@
     var elem = $(this);
   	 
     var pattern = new RegExp(elem.attr("pattern"));
-    if (pattern.test(elem.val())) {
-       alert('okay');
-    } else {
-    	 alert('bad');
+    if (!pattern.test(elem.val())) {
+       alert('El link ingresado no es válido');
     }
   })
 </script>
