@@ -2,7 +2,7 @@
   <div class="form-group">
     <div class="input-group">
       <div class="input-group-addon">Repositorio</div>
-      <input id="repositorio" name="repositorio" type="text" class="form-control mu-free-form-input" placeholder="Link del repositorio" oninput="InvalidMsg(this);" pattern="https:\/\/github.com\/\w+\/\w+">
+      <input id="repositorio" name="repositorio" type="text" class="form-control mu-free-form-input" placeholder="Link del repositorio" pattern="https:\/\/github.com\/\w+\/\w+">
     </div>
   </div>
 </div>
@@ -12,17 +12,8 @@
     var elem = $(this);
   	 
     var pattern = new RegExp(elem.attr("pattern"));
-  
-    function InvalidMsg(textbox) {
-  
-      if (textbox.value === '') {
-        textbox.setCustomValidity('Es necesario un link a un repositorio');
-      } else if (!pattern.test(elem.val())) {
-        textbox.setCustomValidity('Es necesario cargar un link válido');
-      } else {
-        textbox.setCustomValidity('');
-      }
-  
-      return true;
+    if (!pattern.test(elem.val())) {
+       alert('El link ingresado no es válido');
     }
+  })
 </script>
