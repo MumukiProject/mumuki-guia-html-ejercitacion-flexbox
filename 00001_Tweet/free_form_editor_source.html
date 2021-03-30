@@ -6,3 +6,16 @@
     </div>
   </div>
 </div>
+
+<script>
+  $("input[pattern]").blur(function(){
+    var elem = $(this);
+  	 
+    var pattern = new RegExp(elem.attr("pattern"));
+    if (pattern.test(elem.val())) {
+       alert('okay');
+    } else {
+    	 alert('bad');
+    }
+  })
+</script>
