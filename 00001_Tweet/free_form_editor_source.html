@@ -8,7 +8,7 @@
 </div>
 
 <script>
-  $("input[pattern]").blur(function(){
+  $("input[pattern]").submit(function(){
     var elem = $(this);
   	 
     var pattern = new RegExp(elem.attr("pattern"));
